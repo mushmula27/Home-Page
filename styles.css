@@ -1,15 +1,29 @@
-.first-section,
-.second-section {
+.first-section {
   position: fixed;
   top: 0;
   left: 0;
-  width: 33.3vw;
+  width: 38vw;
+  /* text-align: center; */
+  overflow: hidden;
+}
+
+.second-section {
+  position: fixed;
+  top: 0;
+  left: 16vw;
+  width: 38vw;
   text-align: center;
   overflow: hidden;
 }
 
-.first-section img,
+.first-section img {
+  position: relative;
+  height: 100vh;
+  left: 0;
+}
+
 .second-section img {
   position: relative;
   height: 100vh;
+  left: 0vw;
 }

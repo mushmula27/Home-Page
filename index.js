@@ -4,15 +4,21 @@ const dasha2Img = document.querySelector(".second-section img");
 function testCtrl(offset, duration) {
   const perc = offset / duration;
   if (offset < duration) {
-    dashaImg.style.opacity = `${1 - perc}`;
+    let opacity = `${0.3 + (1 - perc)}`;
+    dashaImg.style.opacity = opacity;
+    let left = `${-7 * perc}`;
+    dashaImg.style.left = left + "vw";
+    dashaImg.style.filter = "blur(" + `${4 * perc}` + "px)";
   } else {
-    dashaImg.style.opacity = 0;
+    dashaImg.style.opacity = 0.3;
+
+    dashaImg.style.filter = "blur(4px)";
   }
 }
 
 function test2Ctrl(offset, duration) {
   if (offset < 0) {
-    dasha2Img.style.opacity = 1;
+    dasha2Img.style.opacity = 0;
   } else {
     dasha2Img.style.opacity = 1;
   }
