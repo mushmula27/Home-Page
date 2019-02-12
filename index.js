@@ -25,7 +25,7 @@ function kitty2(offset, duration) {
   if (offset < duration) {
     dasha2Img.style.opacity = 1;
 
-    let translate = `${-100 * perc}`;
+    let translate = `${-200 * perc}`;
     dasha2Img.style.transform = "translateX(" + translate + "%)";
   } else {
     dasha2Img.style.opacity = 1;
@@ -43,7 +43,7 @@ function kitty3(offset, duration) {
     dashaImg.style.filter = "blur(" + `${target_blur1 * perc}` + "px)";
     dasha2Img.style.filter = "blur(" + `${target_blur2 * perc}` + "px)";
 
-    let translate = `${-100 * perc}`;
+    // let translate = `${-100 * perc}`;
     // dasha2Img.style.transform = "translateX(" + translate + "%)";
     // this line should move the image but instead makes it blur
     //as it is coming into view with the screen
@@ -63,12 +63,12 @@ new ParallaxProvider([
   {
     controller: kitty2,
     mountPoint: -100,
-    duration: 600
+    duration: 1100
   },
 
   {
     controller: kitty3,
-    mountPoint: 0,
+    mountPoint: -600,
     duration: 500
   }
 ]);

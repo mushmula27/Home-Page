@@ -10,8 +10,8 @@
   position: fixed;
   top: 0;
   right: 0vw;
-  /* width: 38vw; */
-  text-align: center;
+  width: 100vw;
+  /* text-align: center; */
   overflow: hidden;
 }
 
