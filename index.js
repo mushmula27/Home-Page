@@ -17,6 +17,7 @@ function kitty1(offset, duration) {
     dashaImg.style.opacity = target_opacity;
     dashaImg.style.filter = "blur(" + `${target_blur}` + "px)";
   }
+  console.log(offset + " is offset 1");
 }
 
 function kitty2(offset, duration) {
@@ -29,6 +30,28 @@ function kitty2(offset, duration) {
   } else {
     dasha2Img.style.opacity = 1;
   }
+  console.log(offset + " is offset 2");
+}
+
+// The below function should blur the two images and move dasha2Img to the left
+
+function kitty3(offset, duration) {
+  const perc = offset / duration;
+  const target_blur1 = 6;
+  const target_blur2 = 4;
+  if (offset < duration) {
+    dashaImg.style.filter = "blur(" + `${target_blur1 * perc}` + "px)";
+    dasha2Img.style.filter = "blur(" + `${target_blur2 * perc}` + "px)";
+
+    let translate = `${-100 * perc}`;
+    // dasha2Img.style.transform = "translateX(" + translate + "%)";
+    // this line should move the image but instead makes it blur
+    //as it is coming into view with the screen
+  } else {
+    dashaImg.style.filter = "blur(" + `${target_blur1}` + "px)";
+    dasha2Img.style.filter = "blur(" + `${target_blur2}` + "px)";
+  }
+  console.log(offset + " is offset 3");
 }
 
 new ParallaxProvider([
@@ -41,5 +64,11 @@ new ParallaxProvider([
     controller: kitty2,
     mountPoint: -100,
     duration: 600
+  },
+
+  {
+    controller: kitty3,
+    mountPoint: 0,
+    duration: 500
   }
 ]);
