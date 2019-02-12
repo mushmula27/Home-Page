@@ -4,7 +4,7 @@ const dasha2Img = document.querySelector(".second-section img");
 function kitty1(offset, duration) {
   const perc = offset / duration;
   const target_opacity = 0.3;
-  const target_blur = 4;
+  const target_blur_kitty1 = 4;
   if (offset < duration) {
     let opacity = `${target_opacity + (1 - perc)}`;
     dashaImg.style.opacity = opacity;
@@ -12,10 +12,10 @@ function kitty1(offset, duration) {
     let translate = `${-7 * perc}`;
     dashaImg.style.transform = "translateX(" + translate + "vw)";
 
-    dashaImg.style.filter = "blur(" + `${target_blur * perc}` + "px)";
+    dashaImg.style.filter = "blur(" + `${target_blur_kitty1 * perc}` + "px)";
   } else {
     dashaImg.style.opacity = target_opacity;
-    dashaImg.style.filter = "blur(" + `${target_blur}` + "px)";
+    dashaImg.style.filter = "blur(" + `${target_blur_kitty1}` + "px)";
   }
   console.log(offset + " is offset 1");
 }
@@ -37,10 +37,10 @@ function kitty2(offset, duration) {
 
 function kitty3(offset, duration) {
   const perc = offset / duration;
-  const target_blur1 = 6;
+  const target_blur_kitty1_increase = 2;
   const target_blur2 = 4;
   if (offset < duration) {
-    dashaImg.style.filter = "blur(" + `${target_blur1 * perc}` + "px)";
+    dashaImg.style.filter = "blur(" + `${4 + 2 * perc}` + "px)";
     dasha2Img.style.filter = "blur(" + `${target_blur2 * perc}` + "px)";
 
     // let translate = `${-100 * perc}`;
@@ -62,13 +62,13 @@ new ParallaxProvider([
   },
   {
     controller: kitty2,
-    mountPoint: -100,
+    mountPoint: 0,
     duration: 1100
   },
 
   {
     controller: kitty3,
-    mountPoint: -600,
+    mountPoint: 0,
     duration: 500
   }
 ]);
