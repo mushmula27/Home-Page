@@ -2,16 +2,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 38vw;
-  /* text-align: center; */
+  /* width: 38vw; */
   overflow: hidden;
 }
 
 .second-section {
   position: fixed;
   top: 0;
-  left: 16vw;
-  width: 38vw;
+  right: 0vw;
+  /* width: 38vw; */
   text-align: center;
   overflow: hidden;
 }
@@ -19,11 +18,11 @@
 .first-section img {
   position: relative;
   height: 100vh;
-  left: 0;
 }
 
 .second-section img {
   position: relative;
-  height: 100vh;
-  left: 0vw;
+  height: 110vh;
+  /* left: 0vw; */
+  right: -100%;
 }

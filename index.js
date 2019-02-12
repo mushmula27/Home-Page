@@ -1,24 +1,31 @@
 const dashaImg = document.querySelector(".first-section img");
 const dasha2Img = document.querySelector(".second-section img");
 
-function testCtrl(offset, duration) {
+function kitty1(offset, duration) {
   const perc = offset / duration;
+  const target_opacity = 0.3;
+  const target_blur = 4;
   if (offset < duration) {
-    let opacity = `${0.3 + (1 - perc)}`;
+    let opacity = `${target_opacity + (1 - perc)}`;
     dashaImg.style.opacity = opacity;
-    let left = `${-7 * perc}`;
-    dashaImg.style.left = left + "vw";
-    dashaImg.style.filter = "blur(" + `${4 * perc}` + "px)";
-  } else {
-    dashaImg.style.opacity = 0.3;
 
-    dashaImg.style.filter = "blur(4px)";
+    let translate = `${-7 * perc}`;
+    dashaImg.style.transform = "translateX(" + translate + "vw)";
+
+    dashaImg.style.filter = "blur(" + `${target_blur * perc}` + "px)";
+  } else {
+    dashaImg.style.opacity = target_opacity;
+    dashaImg.style.filter = "blur(" + `${target_blur}` + "px)";
   }
 }
 
-function test2Ctrl(offset, duration) {
-  if (offset < 0) {
-    dasha2Img.style.opacity = 0;
+function kitty2(offset, duration) {
+  const perc = offset / duration;
+  if (offset < duration) {
+    dasha2Img.style.opacity = 1;
+
+    let translate = `${-100 * perc}`;
+    dasha2Img.style.transform = "translateX(" + translate + "%)";
   } else {
     dasha2Img.style.opacity = 1;
   }
@@ -26,13 +33,13 @@ function test2Ctrl(offset, duration) {
 
 new ParallaxProvider([
   {
-    controller: testCtrl,
+    controller: kitty1,
     mountPoint: 0,
     duration: 500
   },
   {
-    controller: test2Ctrl,
-    mountPoint: 0,
-    duration: 500
+    controller: kitty2,
+    mountPoint: -100,
+    duration: 600
   }
 ]);
