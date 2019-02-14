@@ -22,7 +22,8 @@ function kitty1(offset, duration) {
 
 function kitty2(offset, duration) {
   const perc = offset / duration;
-  if (offset < duration) {
+  if (offset < 0) {
+  } else if (offset < duration) {
     dasha2Img.style.opacity = 1;
 
     let translate = `${-200 * perc}`;
@@ -39,7 +40,10 @@ function kitty3(offset, duration) {
   const perc = offset / duration;
   const target_blur_kitty1_increase = 2;
   const target_blur2 = 4;
-  if (offset < duration) {
+  if (offset < 0) {
+    dashaImg.style.opacity = 0.3;
+    dashaImg.style.filter = "blur(" + `${4}` + "px)";
+  } else if (offset < duration) {
     dashaImg.style.filter = "blur(" + `${4 + 2 * perc}` + "px)";
     dasha2Img.style.filter = "blur(" + `${target_blur2 * perc}` + "px)";
 

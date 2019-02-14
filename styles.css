@@ -2,7 +2,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  /* width: 38vw; */
   overflow: hidden;
 }
 
@@ -11,7 +10,14 @@
   top: 0;
   right: 0vw;
   width: 100vw;
-  /* text-align: center; */
+  /* text-align: left; */
+  overflow: hidden;
+}
+
+.third-section {
+  position: fixed;
+  top: 0;
+  right: 0;
   overflow: hidden;
 }
 
@@ -24,5 +30,12 @@
   position: relative;
   height: 110vh;
   /* left: 0vw; */
-  right: -100%;
+  right: -110vw;
+}
+
+.third-section img {
+  position: relative;
+  height: 100vh;
+  /*top: -10vh;
+  right: -5vw; */
 }
